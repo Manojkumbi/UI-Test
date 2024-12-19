@@ -1,120 +1,282 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  /* Light background color */
+  color: #333;
+  /* Text color */
+  line-height: 1.6;
+}
+
+.navbar {
+  background-color: #2c3e50;
+  /* Darker navbar background */
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Add subtle shadow */
+}
+
+.navbar h1 {
+  font-size: 1.8rem;
+  /* Increased font size for website title */
+  margin-right: 20px;
+  letter-spacing: 1px;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  /* Increased margin between links */
+  font-size: 1rem;
+  /* Set font size for links */
+  transition: color 0.3s ease;
+  /* Smooth transition for hover */
+}
+
+.navbar nav a:hover {
+  color: #e74c3c;
+  /* Change color on hover */
+}
+
+.navbar nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+  gap: 20px;
+  padding: 20px;
+  /* Added padding around content */
+}
+
+.index-bar {
+  width: 15%;
+  /* Sidebar width */
+  background-color: #ecf0f1;
+  /* Light gray background */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add shadow to sidebar */
+  border-radius: 8px;
+  /* Rounded corners */
+}
+
+.index-bar ul {
+  list-style-type: none;
+
+}
+
+.index-bar ul li {
+  margin: 15px 0;
+  /* Increased margin between list items */
+}
+
+.index-bar ul li a {
+  text-decoration: none;
+  text-align: center;
+  color: #333;
+  /* Dark text color */
+  font-size:1.1rem;
+  /* Slightly larger font size */
+  font-weight: 500;
+  /* Medium font weight */
+  transition: color 0.3s ease;
+}
+
+.index-bar ul li a:hover {
+  color: #e74c3c;
+  /* Change color on hover */
+}
+
+.gallery {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 8px;
+  width: 80vw;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add shadow to gallery */
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  /* Larger heading size */
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  /* Center align heading */
+}
+
+#gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+#gallery-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  /* Rounded corners for images */
+  transition: transform 0.3s ease;
+  /* Smooth transform on hover */
+}
+
+#gallery-container img:hover {
+  transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(245, 241, 2, 0.918);
+
+  border-radius: 8px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Large screens (Desktop, large laptops): More images per row */
+@media (min-width: 1200px) {
+  #gallery-container {
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 images per row */
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
+}
+
+/* Laptops: Two images per row */
+@media (max-width: 1024px) {
+  #gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 images per row */
   }
-  
-  .navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-  }
-  
-  .navbar nav {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
+}
+
+/* Mobile devices: One image per row and larger size */
+@media (max-width: 768px) {
   .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    height: 20vw;
-    height: 100vh;
-    overflow-y: hidden;
+    flex-direction: column;
+    height: auto;
   }
+
+.gallery{
+  padding: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: scroll;
+  text-align: center;
+}
+
   
+#gallery-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  /* Rounded corners for images */
+  transition: transform 0.3s ease;
+  /* Smooth transform on hover */
+}
+
+#gallery-container img:hover {
+  transform: scale(1.05);
+  border-radius: 8px;
+}
+
+
+#gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+  hr{
+    display: none;
+  }
+
   .index-bar {
     width: 100%;
-    background-color: #f4f4f4;
-    padding: 20px;
+    display: none;
+    text-align: center;
   }
-  
-  .index-bar ul {
-    list-style-type: none;
-  }
-  
-  .index-bar ul li {
-    margin: 10px 0;
-  }
-  
-  .index-bar ul li a {
-    text-decoration: none;
-    color: #333;
-  }
-  
+
   .gallery {
-    flex-grow: 1;
-    padding: 20px;
-    overflow-y: auto;
+    width: 100%;
   }
-  
+
   #gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    /* One image per row */
   }
-  
+
   #gallery-container img {
     width: 100%;
+    /* Full width */
     height: auto;
-    border-radius: 5px;
   }
-  
-  /* Media Queries for Responsiveness */
-  
-  /* Large screens (Desktop, large laptops): More images per row */
-  @media (min-width: 1200px) {
-    #gallery-container {
-      grid-template-columns: repeat(4, 1fr); /* 4 images per row */
-    }
-  }
-  
-  /* Laptops: Two images per row */
-  @media (max-width: 1024px) {
-    #gallery-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 images per row */
-    }
-  }
-  
-  /* Mobile devices: One image per row and larger size */
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      height: auto;
-    }
-  
-    .index-bar {
-      width: 100%;
-      text-align: center;
-    }
-  
-    .gallery {
-      width: 100%;
-    }
-  
-    #gallery-container {
-      grid-template-columns: 1fr; /* One image per row */
-    }
-  
-    #gallery-container img {
-      width: 100%; /* Full width */
-      height: auto;
-    }
-  }
-  
+}
+
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo h1 {
+  font-size: 1.5em;
+  margin: 0;
+  color: white;
+  text-decoration: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1em;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #f1f1f1;
+}
+
+/* Styling for the footer */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1em;
+}
