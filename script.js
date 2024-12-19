@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let i = 1; i <= 10; i++) {
       const img = document.createElement("img");
-      img.src = `${day}/${i}.png`;
+      img.src = `assets/${day}/${i}.png`;
       img.alt = `Image ${i}`;
       
       img.addEventListener("click", () => {
