@@ -22,6 +22,11 @@ class GitAutoCommitHandler(FileSystemEventHandler):
             # Run git commit
             subprocess.run(["git", "commit", "-m", "committed"], check=True)
             print("Git commit executed.")
+            subprocess.run(["git", "add", "."], check=True)
+            print("Git add executed.")
+            # Run git commit
+            subprocess.run(["git", "commit", "-m", "committed"], check=True)
+            print("Git commit executed.")
         except subprocess.CalledProcessError as e:
             print(f"Error during Git operation: {e}")
 
