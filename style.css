@@ -143,7 +143,9 @@ body {
     flex-direction: column;
     height: auto;
   }
-
+.index-bar{
+display: none;
+}
   .gallery {
     padding: 10px;
   }
