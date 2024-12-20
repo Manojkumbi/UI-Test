@@ -9,22 +9,26 @@ WATCHED_DIR = "../assets/day1"
 class GitAutoCommitHandler(FileSystemEventHandler):
     def on_any_event(self, event):
         # Check for file created or deleted events
-        if event.event_type in ("created", "deleted"):
+        if event.event_type in ("created", "deleted", "modified"):
             print(f"Detected {event.event_type} on {event.src_path}")
             self.run_git_commands()
 
     @staticmethod
     def run_git_commands():
         try:
-            # Run git add .
-            subprocess.run(["git", "add", "."], check=True)
+            # Stage all changes including untracked files
+            subprocess.run(["git", "add", "--all"], check=True)
             print("Git add executed.")
-            # Run git commit
-            subprocess.run(["git", "commit", "-m", "\"committed\""], check=True)
+            
+            # Commit the changes
+            commit_message = "Auto-commit: changes detected in monitored directory"
+            subprocess.run(["git", "commit", "-m", commit_message], check=True)
             print("Git commit executed.")
-            subprocess.run(["git", "push", "-u","origin","main"], check=True)
-            print("Git add executed.")
-
+            
+            # Push changes to the remote repository
+            subprocess.run(["git", "push", "-u", "origin", "main"], check=True)
+            print("Git push executed.")
+        
         except subprocess.CalledProcessError as e:
             print(f"Error during Git operation: {e}")
 
