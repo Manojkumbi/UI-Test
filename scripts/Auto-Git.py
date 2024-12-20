@@ -20,7 +20,7 @@ class GitAutoCommitHandler(FileSystemEventHandler):
             subprocess.run(["git", "add", "."], check=True)
             print("Git add executed.")
             # Run git commit
-            subprocess.run(["git", "commit", "-m", "committed"], check=True)
+            subprocess.run(["git", "commit", "-m", "\"committed\""], check=True)
             print("Git commit executed.")
             subprocess.run(["git", "push", "-u","origin","main"], check=True)
             print("Git add executed.")
