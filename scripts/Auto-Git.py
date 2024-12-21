@@ -21,7 +21,7 @@ class GitAutoCommitHandler(FileSystemEventHandler):
             print("Git add executed.")
             
             # Commit the changes
-            commit_message = "Auto-commit: changes detected in monitored directory"
+            commit_message = "Jarvis: changes detected in monitored directory"
             subprocess.run(["git", "commit", "-m", commit_message], check=True)
             print("Git commit executed.")
             
@@ -33,7 +33,6 @@ class GitAutoCommitHandler(FileSystemEventHandler):
             print(f"Error during Git operation: {e}")
 
 if __name__ == "__main__":
-    # Create an event handler and observer
     event_handler = GitAutoCommitHandler()
     observer = Observer()
     observer.schedule(event_handler, WATCHED_DIR, recursive=True)
@@ -42,7 +41,7 @@ if __name__ == "__main__":
     try:
         observer.start()
         while True:
-            pass  # Keep the script running
+            pass  
     except KeyboardInterrupt:
         observer.stop()
         print("Stopped monitoring.")
