@@ -2,16 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const galleryContainer = document.getElementById("gallery-container");
   const dayList = document.getElementById("day-list");
   
-  const days = ['day1'];
+  const days = ['day1','day2'];
 
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
   const caption = document.getElementById("caption");
   const closeBtn = document.getElementsByClassName("close-btn")[0];
-
+const h2=document.getElementsByTagName("h2")[0]
   function updateGallery(day) {
     galleryContainer.innerHTML = '';
 
+h2.innerHTML=`${day.toUpperCase()} IMAGES`;
     for (let i = 1; i <= 10; i++) {
       const img = document.createElement("img");
       img.src = `assets/${day}/${i}.png`;
