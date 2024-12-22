@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const galleryContainer = document.getElementById("gallery-container");
   const dayList = document.getElementById("day-list");
   
-  const days = ['day1','day2'];
+  const days = ['day1','day2','day3'];
 
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImage");
