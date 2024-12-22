@@ -4,7 +4,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 # Directory to monitor
-WATCHED_DIR = "../assets/day2"
+WATCHED_DIR = "../assets/day3"
 
 class GitAutoCommitHandler(FileSystemEventHandler):
     def on_any_event(self, event):
